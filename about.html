@@ -3,24 +3,26 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title id="about_page_title">Plumber in Eagle Pass, TX | Emergency Service</title>
+<title id="about_page_title">About Us | Pro Plumber Eagle Pass</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Emergency Plumber in Eagle Pass, TX" id="about_meta_emergency_title" name="keywords"/>
-<meta content="Expert plumbing services in Eagle Pass, TX, offering reliable solutions for all your residential and commercial needs. From emergency repairs to routine maintenance, our skilled plumbers ensure prompt and efficient service. Satisfaction guaranteed. Contact us today for a free estimate." id="about_meta_description" name="description"/>
+<meta content="Emergency Plumber in Eagle Pass, TX | Pro Plumber Eagle Pass" id="about_meta_emergency_title" name="keywords"/>
+<meta content="Reliable and professional plumbing services in Eagle Pass, TX. From repairs and maintenance to emergency services, our experienced plumbers ensure efficient solutions for your home or business. Contact us for fast, affordable service." id="about_meta_description" name="description"/>
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon"/>
 <!-- Google Web Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Preload the font CSS to speed up fetching -->
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Roboto:wght@500;700&amp;display=swap" rel="preload"/>
+<!-- Apply the font stylesheet -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Roboto:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <!-- Icon Font Stylesheet -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
+<link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <!-- Libraries Stylesheet -->
-<link href="lib/animate/animate.min.css" rel="stylesheet"/>
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
-<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet"/>
-<!-- Customized Bootstrap Stylesheet -->
+<!-- Preload Bootstrap CSS to ensure it's fetched as early as possible -->
+<link as="style" href="css/bootstrap.min.css" rel="preload"/>
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
 <!-- Template Stylesheet -->
 <link href="css/style.css" rel="stylesheet"/>
@@ -31,7 +33,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-    
+
         /* Floating full-width button */
         .call-now-button {
             position: fixed;
@@ -51,64 +53,153 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-    
+
         /* Hover effect */
         .call-now-button:hover {
             background-color: #218838;
         }
-    
+
         /* Active (clicked) state */
         .call-now-button:active {
             background-color: #1e7e34;
         }
-    
+
         /* Prevent blue text after click */
         .call-now-button:visited {
             color: white;
         }
-    
+
         /* Ensure the button is mobile-friendly */
         @media (min-width: 768px) {
             .call-now-button {
                 display: none;
             }
         }
+
+        /* Desktop Dropdown Styles */
+        @media screen and (min-width: 1024px) {
+
+            /* Ensure sub-menus only appear when hovering over the parent item */
+            #service_dropdown .dropdown:hover>.dropdown-menu,
+            #serviceArea_dropdown .dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+
+            /* Standard styling for dropdown submenus */
+            #service_dropdown .dropdown-menu.dropdown-submenu,
+            #serviceArea_dropdown .dropdown-menu.dropdown-submenu {
+                top: -5px;
+                left: 90%;
+                margin-left: 0.1rem;
+                display: none;
+                position: absolute;
+            }
+
+            /* General dropdown menu transitions */
+            #service_dropdown .dropdown-menu,
+            #serviceArea_dropdown .dropdown-menu {
+                display: none;
+                transition: all 0.3s ease-in-out;
+                z-index: 1050;
+            }
+
+            /* Optional: Add delay for opening and closing the menu */
+            #service_dropdown:hover>.dropdown-menu,
+            #serviceArea_dropdown:hover>.dropdown-menu,
+            .dropdown-item.dropdown:hover>.dropdown-menu,
+            #service_dropdown,
+            #serviceArea_dropdown,
+            .dropdown-item.dropdown {
+                transition-delay: 0.2s;
+            }
+        }
+
+        /* Mobile Menu Styling */
+        @media (max-width: 768px) {
+
+            #mobileServiceDropdown .nav-link,
+            #mobileServiceAreaDropdown .nav-link {
+                padding-left: 20px;
+            }
+
+            /* Submenu indentation for mobile */
+            .ms-3 {
+                padding-left: 30px;
+            }
+
+            .nav-item.nav-link {
+                font-size: 1rem;
+            }
+
+            /* Custom styling for dropdown toggle on mobile */
+            #mobileServicesMenu .nav-item.nav-link,
+            #mobileServiceAreaMenu .nav-item.nav-link {
+                font-weight: bold;
+            }
+
+            /* Ensure collapsed submenus are hidden on mobile until toggled */
+            #mobileServiceDropdown .collapse,
+            #mobileServiceAreaDropdown .collapse {
+                display: none;
+            }
+
+            #mobileServiceDropdown .collapse.show,
+            #mobileServiceAreaDropdown .collapse.show {
+                display: block;
+            }
+
+            /* Hide parent dropdowns on mobile */
+            #parentServiceDropdown,
+            #parentServiceAreaDropdown {
+                display: none;
+            }
+        }
     </style>
-</head>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://plumbereaglepasstx.com"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "https://plumbereaglepasstx.com/about"
+        }
+    ]
+}</script></head>
 <body>
-<a class="call-now-button phoneNumber" href="tel:(773) 337-2939" id="btn_CallNow">
+<a class="call-now-button phoneNumber" href="tel:(830) 205-0587" id="btn_CallNow">
 <i>📞</i> Call Now
         </a>
-<!-- Spinner Start -->
-<div class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" id="spinner">
-<div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-<span class="sr-only">Loading...</span>
-</div>
-</div>
-<!-- Spinner End -->
 <!-- Topbar Start -->
 <div class="container-fluid bg-light d-none d-lg-block">
 <div class="row align-items-center top-bar">
 <div class="col-lg-3 col-md-12 text-center text-lg-start">
 <a class="navbar-brand m-0 p-0 homeURL" href="https://plumbereaglepasstx.com">
-<h1 class="text-primary m-0" id="about_top_nav_niche">Eagle Pass, TX Plumber</h1>
+<img alt="Logo" class="m-0 img w-50" id="logo_desktop" src="https://ik.imagekit.io/5qfjdtfh72/Plumbing%20Lead%20Gen/Eagle%20Pass/5.png?updatedAt=1740054941337"/>
 </a>
 </div>
 <div class="col-lg-9 col-md-12 text-end">
 <div class="h-100 d-inline-flex align-items-center me-4">
 <i class="fa fa-map-marker-alt text-primary me-2"></i>
-<p class="m-0" id="about_top_nav_city">Eagle Pass, TX</p>
+<p class="m-0" id="about_top_nav_city">2131 Main St, Eagle Pass, TX 78852, USA</p>
 </div>
 <div class="h-100 d-inline-flex align-items-center me-4">
 <i class="far fa-envelope-open text-primary me-2"></i>
-<p class="m-0" id="about_top_nav_email">info@plumbereaglepasstx.com</p>
+<p class="m-0" id="top_nav_email">info@plumbereaglepasstx.com</p>
 </div>
-<!-- <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="[Facebook]"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="[Twitter]"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="[LinkedIn]"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="[Instagram]"><i class="fab fa-instagram"></i></a>
-                </div> -->
+<div class="h-100 d-inline-flex align-items-center">
+<a class="socialFacebook btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/Proplumbereaglepass/"><i class="fab fa-facebook-f"></i></a>
+<a class="socialInstagram btn btn-sm-square bg-white text-primary me-1" href="#"><i class="fab fa-instagram"></i></a>
+<a class="socialLinkedin btn btn-sm-square bg-white text-primary me-1" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fab fa-linkedin-in"></i></a>
+<a class="socialPinterest btn btn-sm-square bg-white text-primary me-0" href="https://www.pinterest.com/plumbereaglepass/"><i class="fab fa-pinterest"></i></a>
+</div>
 </div>
 </div>
 </div>
@@ -116,8 +207,8 @@
 <!-- Navbar Start -->
 <div class="container-fluid nav-bar bg-light">
 <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-<a class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none" href="">
-<h1 class="text-primary m-0" id="about_nav_niche_h1">Eagle Pass, TX Plumber</h1>
+<a class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none" href="https://plumbereaglepasstx.com/">
+<img alt="Logo" class="m-0" id="logo_mobile" src="https://ik.imagekit.io/5qfjdtfh72/Plumbing%20Lead%20Gen/Eagle%20Pass/5%20(1).png?updatedAt=1740055035395"/>
 </a>
 <button class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
 <span class="fa fa-bars"></span>
@@ -125,12 +216,28 @@
 <div class="collapse navbar-collapse" id="navbarCollapse">
 <div class="navbar-nav me-auto">
 <a class="nav-item nav-link homeURL" href="https://plumbereaglepasstx.com">Home</a>
-<a class="nav-item nav-link active" href="about">About</a>
-<div class="nav-item dropdown">
+<a class="nav-item nav-link active" href="https://plumbereaglepasstx.com/about">About</a>
+<!-- Services Dropdown -->
+<div class="nav-item dropdown" id="parentServiceDropdown">
 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Services</a>
-<div class="dropdown-menu fade-up m-0" id="service_dropdown"><a class="dropdown-item" href="leak-detection">Leak Detection</a><a class="dropdown-item" href="leak-repair">Leak Repair</a><a class="dropdown-item" href="pipe-repair">Pipe Repair</a><a class="dropdown-item" href="tap-repair">Tap Repair</a><a class="dropdown-item" href="drainage-cleaning">Drainage Cleaning</a></div>
+<div class="dropdown-menu fade-up m-0" id="service_dropdown"><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/emergency-plumbing">Emergency Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="dropdown-item" href="/emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="dropdown-item" href="/emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/leak-detection-and-repair">Leak Detection And Repair</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="dropdown-item" href="/leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="dropdown-item" href="/leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/drain-cleaning">Drain Cleaning</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="dropdown-item" href="/drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="dropdown-item" href="/drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="dropdown-item" href="/drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="dropdown-item" href="/drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/water-heater-services">Water Heater Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/water-heater-services/water-heater-installation">Water Heater Installation</a><a class="dropdown-item" href="/water-heater-services/water-heater-repair">Water Heater Repair</a><a class="dropdown-item" href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="dropdown-item" href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="dropdown-item" href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/pipe-repair-and-replacement">Pipe Repair and Replacement</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/pipe-repair-and-replacement/repiping-services">Repiping Services</a><a class="dropdown-item" href="/pipe-repair-and-replacement/copper-pipe-repair">Copper Pipe Repair</a><a class="dropdown-item" href="/pipe-repair-and-replacement/pex-pipe-installation">PEX Pipe Installation</a><a class="dropdown-item" href="/pipe-repair-and-replacement/pipe-insulation-services">Pipe Insulation Services</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/bathroom-plumbing">Bathroom Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/bathroom-plumbing/toilet-installation-and-repair">Toilet Installation and Repair</a><a class="dropdown-item" href="/bathroom-plumbing/shower-and-bathtub-installation">Shower and Bathtub Installation</a><a class="dropdown-item" href="/bathroom-plumbing/bath-faucet-and-sink-installation">Bath Faucet and Sink Installation</a><a class="dropdown-item" href="/bathroom-plumbing/bidet-installation">Bidet Installation</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/kitchen-plumbing">Kitchen Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/kitchen-plumbing/garbage-disposal-repair-and-installation">Garbage Disposal Repair and Installation</a><a class="dropdown-item" href="/kitchen-plumbing/kitchen-faucet-and-sink-installation">Kitchen Faucet and Sink Installation</a><a class="dropdown-item" href="/kitchen-plumbing/dishwasher-installation">Dishwasher Installation</a><a class="dropdown-item" href="/kitchen-plumbing/ice-maker-line-installation">Ice Maker Line Installation</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/sewer-line-services">Sewer Line Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/sewer-line-services/sewer-line-repair">Sewer Line Repair</a><a class="dropdown-item" href="/sewer-line-services/sewer-line-replacement">Sewer Line Replacement</a><a class="dropdown-item" href="/sewer-line-services/trenchless-sewer-repair">Trenchless Sewer Repair</a><a class="dropdown-item" href="/sewer-line-services/sewer-camera-inspection">Sewer Camera Inspection</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/gas-line-services">Gas Line Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/gas-line-services/gas-line-installation">Gas Line Installation</a><a class="dropdown-item" href="/gas-line-services/gas-line-repair">Gas Line Repair</a><a class="dropdown-item" href="/gas-line-services/gas-leak-detection">Gas Leak Detection</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/water-filtration-and-softening">Water Filtration and Softening</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/water-filtration-and-softening/whole-house-water-filtration-installation">Whole-House Water Filtration Installation</a><a class="dropdown-item" href="/water-filtration-and-softening/water-softener-installation">Water Softener Installation</a><a class="dropdown-item" href="/water-filtration-and-softening/reverse-osmosis-systems">Reverse Osmosis Systems</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/outdoor-plumbing">Outdoor Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/outdoor-plumbing/outdoor-faucet-installation">Outdoor Faucet Installation</a><a class="dropdown-item" href="/outdoor-plumbing/irrigation-system-installation-and-repair">Irrigation System Installation and Repair</a><a class="dropdown-item" href="/outdoor-plumbing/swimming-pool-plumbing-services">Swimming Pool Plumbing Services</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/maintenance-and-inspections">Maintenance and Inspections</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/maintenance-and-inspections/plumbing-system-inspections">Plumbing System Inspections</a><a class="dropdown-item" href="/maintenance-and-inspections/routine-plumbing-maintenance">Routine Plumbing Maintenance</a><a class="dropdown-item" href="/maintenance-and-inspections/seasonal-plumbing-check-ups">Seasonal Plumbing Check-ups</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/remodeling-and-new-construction-plumbing">Remodeling and New Construction Plumbing</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/remodeling-and-new-construction-plumbing/kitchen-remodel-plumbing">Kitchen Remodel Plumbing</a><a class="dropdown-item" href="/remodeling-and-new-construction-plumbing/new-construction-plumbing">New Construction Plumbing</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/backflow-prevention">Backflow Prevention</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/backflow-prevention/backflow-testing">Backflow Testing</a><a class="dropdown-item" href="/backflow-prevention/backflow-prevention-device-installation">Backflow Prevention Device Installation</a><a class="dropdown-item" href="/backflow-prevention/backflow-repair-and-maintenance">Backflow Repair and Maintenance</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/sump-pump-services">Sump Pump Services</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/sump-pump-services/sump-pump-installation">Sump Pump Installation</a><a class="dropdown-item" href="/sump-pump-services/sump-pump-repair">Sump Pump Repair</a><a class="dropdown-item" href="/sump-pump-services/sump-pump-maintenance">Sump Pump Maintenance</a><a class="dropdown-item" href="/sump-pump-services/battery-backup-sump-pumps">Battery Backup Sump Pumps</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/water-pressure-issues">Water Pressure Issues</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/water-pressure-issues/water-pressure-testing">Water Pressure Testing</a><a class="dropdown-item" href="/water-pressure-issues/low-water-pressure-solutions">Low Water Pressure Solutions</a><a class="dropdown-item" href="/water-pressure-issues/high-water-pressure-regulation">High Water Pressure Regulation</a></div></div><div class="dropdown-item dropdown"><a class="dropdown-toggle dropdown-item" href="/eco-friendly-plumbing-solutions">Eco-Friendly Plumbing Solutions</a><div class="dropdown-menu dropdown-submenu"><a class="dropdown-item" href="/eco-friendly-plumbing-solutions/low-flow-fixture-installation">Low-Flow Fixture Installation</a><a class="dropdown-item" href="/eco-friendly-plumbing-solutions/greywater-recycling-systems">Greywater Recycling Systems</a><a class="dropdown-item" href="/eco-friendly-plumbing-solutions/rainwater-harvesting-systems">Rainwater Harvesting Systems</a></div></div></div>
 </div>
-<a class="nav-item nav-link" href="contact">Contact</a>
+<div class="d-block d-lg-none" id="mobileServicesMenu">
+<a class="nav-item nav-link dropdown-toggle" data-bs-target="#mobileServiceDropdown" data-bs-toggle="collapse" href="#">Services</a>
+<div class="collapse" id="mobileServiceDropdown"><a class="nav-item nav-link dropdown-toggle" data-bs-target="#emergencyplumbingDropdown" data-bs-toggle="collapse" href="/emergency-plumbing">Emergency Plumbing</a><div class="collapse ms-3" id="emergencyplumbingDropdown"><a class="nav-item nav-link" href="/emergency-plumbing/24-hour-emergency-plumbing">24-Hour Emergency Plumbing</a><a class="nav-item nav-link" href="/emergency-plumbing/burst-pipe-repair">Burst Pipe Repair</a><a class="nav-item nav-link" href="/emergency-plumbing/flooded-basement-solutions">Flooded Basement Solutions</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#leakdetectionandrepairDropdown" data-bs-toggle="collapse" href="/leak-detection-and-repair">Leak Detection And Repair</a><div class="collapse ms-3" id="leakdetectionandrepairDropdown"><a class="nav-item nav-link" href="/leak-detection-and-repair/water-leak-detection">Water Leak Detection</a><a class="nav-item nav-link" href="/leak-detection-and-repair/slab-leak-repair">Slab Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/faucet-leak-repair">Faucet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/toilet-leak-repair">Toilet Leak Repair</a><a class="nav-item nav-link" href="/leak-detection-and-repair/pipe-leak-repair">Pipe Leak Repair</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#draincleaningDropdown" data-bs-toggle="collapse" href="/drain-cleaning">Drain Cleaning</a><div class="collapse ms-3" id="draincleaningDropdown"><a class="nav-item nav-link" href="/drain-cleaning/clogged-drain-repair">Clogged Drain Repair</a><a class="nav-item nav-link" href="/drain-cleaning/hydro-jetting-services">Hydro Jetting Services</a><a class="nav-item nav-link" href="/drain-cleaning/sewer-drain-cleaning">Sewer Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/kitchen-drain-cleaning">Kitchen Drain Cleaning</a><a class="nav-item nav-link" href="/drain-cleaning/bathroom-drain-cleaning">Bathroom Drain Cleaning</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#waterheaterservicesDropdown" data-bs-toggle="collapse" href="/water-heater-services">Water Heater Services</a><div class="collapse ms-3" id="waterheaterservicesDropdown"><a class="nav-item nav-link" href="/water-heater-services/water-heater-installation">Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-repair">Water Heater Repair</a><a class="nav-item nav-link" href="/water-heater-services/tankless-water-heater-installation">Tankless Water Heater Installation</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-maintenance">Water Heater Maintenance</a><a class="nav-item nav-link" href="/water-heater-services/water-heater-replacement">Water Heater Replacement</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#piperepairandreplacementDropdown" data-bs-toggle="collapse" href="/pipe-repair-and-replacement">Pipe Repair and Replacement</a><div class="collapse ms-3" id="piperepairandreplacementDropdown"><a class="nav-item nav-link" href="/pipe-repair-and-replacement/repiping-services">Repiping Services</a><a class="nav-item nav-link" href="/pipe-repair-and-replacement/copper-pipe-repair">Copper Pipe Repair</a><a class="nav-item nav-link" href="/pipe-repair-and-replacement/pex-pipe-installation">PEX Pipe Installation</a><a class="nav-item nav-link" href="/pipe-repair-and-replacement/pipe-insulation-services">Pipe Insulation Services</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#bathroomplumbingDropdown" data-bs-toggle="collapse" href="/bathroom-plumbing">Bathroom Plumbing</a><div class="collapse ms-3" id="bathroomplumbingDropdown"><a class="nav-item nav-link" href="/bathroom-plumbing/toilet-installation-and-repair">Toilet Installation and Repair</a><a class="nav-item nav-link" href="/bathroom-plumbing/shower-and-bathtub-installation">Shower and Bathtub Installation</a><a class="nav-item nav-link" href="/bathroom-plumbing/bath-faucet-and-sink-installation">Bath Faucet and Sink Installation</a><a class="nav-item nav-link" href="/bathroom-plumbing/bidet-installation">Bidet Installation</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#kitchenplumbingDropdown" data-bs-toggle="collapse" href="/kitchen-plumbing">Kitchen Plumbing</a><div class="collapse ms-3" id="kitchenplumbingDropdown"><a class="nav-item nav-link" href="/kitchen-plumbing/garbage-disposal-repair-and-installation">Garbage Disposal Repair and Installation</a><a class="nav-item nav-link" href="/kitchen-plumbing/kitchen-faucet-and-sink-installation">Kitchen Faucet and Sink Installation</a><a class="nav-item nav-link" href="/kitchen-plumbing/dishwasher-installation">Dishwasher Installation</a><a class="nav-item nav-link" href="/kitchen-plumbing/ice-maker-line-installation">Ice Maker Line Installation</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#sewerlineservicesDropdown" data-bs-toggle="collapse" href="/sewer-line-services">Sewer Line Services</a><div class="collapse ms-3" id="sewerlineservicesDropdown"><a class="nav-item nav-link" href="/sewer-line-services/sewer-line-repair">Sewer Line Repair</a><a class="nav-item nav-link" href="/sewer-line-services/sewer-line-replacement">Sewer Line Replacement</a><a class="nav-item nav-link" href="/sewer-line-services/trenchless-sewer-repair">Trenchless Sewer Repair</a><a class="nav-item nav-link" href="/sewer-line-services/sewer-camera-inspection">Sewer Camera Inspection</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#gaslineservicesDropdown" data-bs-toggle="collapse" href="/gas-line-services">Gas Line Services</a><div class="collapse ms-3" id="gaslineservicesDropdown"><a class="nav-item nav-link" href="/gas-line-services/gas-line-installation">Gas Line Installation</a><a class="nav-item nav-link" href="/gas-line-services/gas-line-repair">Gas Line Repair</a><a class="nav-item nav-link" href="/gas-line-services/gas-leak-detection">Gas Leak Detection</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#waterfiltrationandsofteningDropdown" data-bs-toggle="collapse" href="/water-filtration-and-softening">Water Filtration and Softening</a><div class="collapse ms-3" id="waterfiltrationandsofteningDropdown"><a class="nav-item nav-link" href="/water-filtration-and-softening/whole-house-water-filtration-installation">Whole-House Water Filtration Installation</a><a class="nav-item nav-link" href="/water-filtration-and-softening/water-softener-installation">Water Softener Installation</a><a class="nav-item nav-link" href="/water-filtration-and-softening/reverse-osmosis-systems">Reverse Osmosis Systems</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#outdoorplumbingDropdown" data-bs-toggle="collapse" href="/outdoor-plumbing">Outdoor Plumbing</a><div class="collapse ms-3" id="outdoorplumbingDropdown"><a class="nav-item nav-link" href="/outdoor-plumbing/outdoor-faucet-installation">Outdoor Faucet Installation</a><a class="nav-item nav-link" href="/outdoor-plumbing/irrigation-system-installation-and-repair">Irrigation System Installation and Repair</a><a class="nav-item nav-link" href="/outdoor-plumbing/swimming-pool-plumbing-services">Swimming Pool Plumbing Services</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#maintenanceandinspectionsDropdown" data-bs-toggle="collapse" href="/maintenance-and-inspections">Maintenance and Inspections</a><div class="collapse ms-3" id="maintenanceandinspectionsDropdown"><a class="nav-item nav-link" href="/maintenance-and-inspections/plumbing-system-inspections">Plumbing System Inspections</a><a class="nav-item nav-link" href="/maintenance-and-inspections/routine-plumbing-maintenance">Routine Plumbing Maintenance</a><a class="nav-item nav-link" href="/maintenance-and-inspections/seasonal-plumbing-check-ups">Seasonal Plumbing Check-ups</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#remodelingandnewconstructionplumbingDropdown" data-bs-toggle="collapse" href="/remodeling-and-new-construction-plumbing">Remodeling and New Construction Plumbing</a><div class="collapse ms-3" id="remodelingandnewconstructionplumbingDropdown"><a class="nav-item nav-link" href="/remodeling-and-new-construction-plumbing/kitchen-remodel-plumbing">Kitchen Remodel Plumbing</a><a class="nav-item nav-link" href="/remodeling-and-new-construction-plumbing/new-construction-plumbing">New Construction Plumbing</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#backflowpreventionDropdown" data-bs-toggle="collapse" href="/backflow-prevention">Backflow Prevention</a><div class="collapse ms-3" id="backflowpreventionDropdown"><a class="nav-item nav-link" href="/backflow-prevention/backflow-testing">Backflow Testing</a><a class="nav-item nav-link" href="/backflow-prevention/backflow-prevention-device-installation">Backflow Prevention Device Installation</a><a class="nav-item nav-link" href="/backflow-prevention/backflow-repair-and-maintenance">Backflow Repair and Maintenance</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#sumppumpservicesDropdown" data-bs-toggle="collapse" href="/sump-pump-services">Sump Pump Services</a><div class="collapse ms-3" id="sumppumpservicesDropdown"><a class="nav-item nav-link" href="/sump-pump-services/sump-pump-installation">Sump Pump Installation</a><a class="nav-item nav-link" href="/sump-pump-services/sump-pump-repair">Sump Pump Repair</a><a class="nav-item nav-link" href="/sump-pump-services/sump-pump-maintenance">Sump Pump Maintenance</a><a class="nav-item nav-link" href="/sump-pump-services/battery-backup-sump-pumps">Battery Backup Sump Pumps</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#waterpressureissuesDropdown" data-bs-toggle="collapse" href="/water-pressure-issues">Water Pressure Issues</a><div class="collapse ms-3" id="waterpressureissuesDropdown"><a class="nav-item nav-link" href="/water-pressure-issues/water-pressure-testing">Water Pressure Testing</a><a class="nav-item nav-link" href="/water-pressure-issues/low-water-pressure-solutions">Low Water Pressure Solutions</a><a class="nav-item nav-link" href="/water-pressure-issues/high-water-pressure-regulation">High Water Pressure Regulation</a></div><a class="nav-item nav-link dropdown-toggle" data-bs-target="#eco-friendlyplumbingsolutionsDropdown" data-bs-toggle="collapse" href="/eco-friendly-plumbing-solutions">Eco-Friendly Plumbing Solutions</a><div class="collapse ms-3" id="eco-friendlyplumbingsolutionsDropdown"><a class="nav-item nav-link" href="/eco-friendly-plumbing-solutions/low-flow-fixture-installation">Low-Flow Fixture Installation</a><a class="nav-item nav-link" href="/eco-friendly-plumbing-solutions/greywater-recycling-systems">Greywater Recycling Systems</a><a class="nav-item nav-link" href="/eco-friendly-plumbing-solutions/rainwater-harvesting-systems">Rainwater Harvesting Systems</a></div></div>
+</div>
+<!-- Service Area Dropdown -->
+<div class="nav-item dropdown" id="parentServiceAreaDropdown">
+<a class="nav-link dropdown-toggle" data-bs-toggle="" href="https://plumbereaglepasstx.com/service-areas">Service Areas</a>
+<div class="dropdown-menu fade-up m-0" id="serviceArea_dropdown"><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/heritage-farms">Heritage Farms</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/deer-run">Deer Run</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/las-quintas">Las Quintas</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/loma-bonita">Loma Bonita</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/siesta-acres">Siesta Acres</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/vista-hermosa">Vista Hermosa</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/hedgeworth">Hedgeworth</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/green-acres">Green Acres</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/eagle-heights">Eagle Heights</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/chaparral-crest">Chaparral Crest</a></div>
+</div>
+<div class="d-block d-lg-none" id="mobileServiceAreaMenu">
+<a class="nav-item nav-link dropdown-toggle" data-bs-target="#mobileServiceAreaDropdown" data-bs-toggle="collapse" href="#">Service Areas</a>
+<div class="collapse" id="mobileServiceAreaDropdown"><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/heritage-farms">Heritage Farms</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/deer-run">Deer Run</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/las-quintas">Las Quintas</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/loma-bonita">Loma Bonita</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/siesta-acres">Siesta Acres</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/vista-hermosa">Vista Hermosa</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/hedgeworth">Hedgeworth</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/green-acres">Green Acres</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/eagle-heights">Eagle Heights</a><a class="dropdown-item" href="https://plumbereaglepasstx.com/service-areas/chaparral-crest">Chaparral Crest</a></div>
+</div>
+<a class="nav-item nav-link" href="https://plumbereaglepasstx.com/testimonial">Testimonial</a>
+<a class="nav-item nav-link" href="https://plumbereaglepasstx.com/faqs">FAQs</a>
+<a class="nav-item nav-link" href="https://plumbereaglepasstx.com/contact">Contact</a>
 </div>
 <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
 <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
@@ -139,7 +246,7 @@
 <div class="ms-3">
 <p class="mb-1 text-white">Emergency 24/7</p>
 <h5 class="m-0 text-secondary">
-<a class="text-secondary text-decoration-none phoneNumber" href="tel:(773) 337-2939" id="about_top_nav_phone">(773) 337-2939</a>
+<a class="text-secondary text-decoration-none phoneNumber" href="tel:(830) 205-0587" id="about_top_nav_phone">(830) 205-0587</a>
 </h5>
 </div>
 </div>
@@ -153,9 +260,8 @@
 <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
 <nav aria-label="breadcrumb animated slideInDown">
 <ol class="breadcrumb text-uppercase">
-<li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-<li aria-current="page" class="breadcrumb-item text-white active">About</li>
+<li class="breadcrumb-item"><a class="text-white" href="https://plumbereaglepasstx.com/">Home</a></li>
+<li aria-current="page" class="breadcrumb-item text-white active"><a class="text-white" href="https://plumbereaglepasstx.com/about">About</a></li>
 </ol>
 </nav>
 </div>
@@ -164,7 +270,7 @@
 <!-- Service Start -->
 <div class="container-xxl py-5">
 <div class="container">
-<div class="row g-4" id="about_services_carousel"><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/Leak-Detection.jpg"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">Leak Detection</h5><a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="leak-detection"><i class="fa fa-arrow-right"></i></a></div></div><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/Leak-Repair.jpg"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">Leak Repair</h5><a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="leak-repair"><i class="fa fa-arrow-right"></i></a></div></div><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/Pipe-Repair.jpg"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">Pipe Repair</h5><a class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="pipe-repair"><i class="fa fa-arrow-right"></i></a></div></div></div>
+<div class="row g-4" id="about_services_carousel"><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/img1.webp"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">Emergency Plumbing</h5><a aria-label="Emergency Plumbing" class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="emergency-plumbing"><i class="fa fa-arrow-right"></i></a></div></div><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/img2.webp"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">24-Hour Emergency Plumbing</h5><a aria-label="24-Hour Emergency Plumbing" class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="24-hour-emergency-plumbing"><i class="fa fa-arrow-right"></i></a></div></div><div class="col-lg-4 col-md-6 service-item-top wow fadeInUp" data-wow-delay="0.1s"><div class="overflow-hidden"><img alt="" class="img-fluid w-100 h-100" src="img/img3.webp"/></div><div class="d-flex align-items-center justify-content-between bg-light p-4"><h5 class="text-truncate me-3 mb-0">Burst Pipe Repair</h5><a aria-label="Burst Pipe Repair" class="btn btn-square btn-outline-primary border-2 border-white flex-shrink-0" href="burst-pipe-repair"><i class="fa fa-arrow-right"></i></a></div></div></div>
 </div>
 </div>
 <!-- Service End -->
@@ -174,8 +280,8 @@
 <div class="row g-5">
 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 <h6 class="text-secondary text-uppercase">About Us</h6>
-<h1 class="mb-4" id="aboutus_title">About Us: Your Trusted Plumbing Experts</h1>
-<p class="mb-4" id="aboutus_content">At Eagle Pass Plumbing Solutions, we pride ourselves on delivering top-notch plumbing services to the Eagle Pass, TX community. With years of experience, our certified team of professionals is dedicated to providing reliable, efficient, and affordable plumbing solutions tailored to meet your needs. From routine maintenance and emergency repairs to new installations, we ensure every job is done with precision and care. Our commitment to customer satisfaction is unmatched, making us the trusted choice for countless residents and businesses in the area. At Eagle Pass Plumbing Solutions, we are more than just plumbers; we are your partners in comfort and safety.</p>
+<h1 class="mb-4" id="aboutus_title">Crafting Confidence in Every Pipe: Your Trusted Plumbing Experts</h1>
+<p class="mb-4" id="aboutus_content">At Eagle Pass Plumbing Solutions, we are dedicated to providing reliable, efficient, and high-quality plumbing services to the Eagle Pass, TX community. With over a decade of experience, our skilled team of licensed plumbers is committed to delivering excellence in every job, from minor repairs to major installations. We pride ourselves on our prompt service, transparent pricing, and customer-centered approach, ensuring total peace of mind. Our friendly, local professionals understand the unique needs of our community and strive to build long-lasting relationships by exceeding expectations. Trust Eagle Pass Plumbing Solutions to keep your home running smoothly all year round.</p>
 <div class="bg-primary d-flex align-items-center p-4 mt-5">
 <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
 <i class="fa fa-phone-alt fa-2x text-primary"></i>
@@ -183,15 +289,42 @@
 <div class="ms-3">
 <p class="fs-5 fw-medium mb-2 text-white">Emergency 24/7</p>
 <h3 class="m-0 text-secondary">
-<a class="text-secondary text-decoration-none phoneNumber" href="tel:(773) 337-2939" id="about_phone">(773) 337-2939</a>
+<a class="text-secondary text-decoration-none phoneNumber" href="tel:(830) 205-0587" id="about_phone">(830) 205-0587</a>
 </h3>
 </div>
 </div>
 </div>
 <div class="col-lg-6 pt-4" style="min-height: 500px;">
 <div class="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
-<img alt="" class="position-absolute img-fluid w-100 h-100" src="img/about-1.jpg" style="object-fit: cover; padding: 0 0 50px 100px;"/>
-<img alt="" class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50" src="img/about-2.jpg" style="object-fit: cover;"/>
+<picture>
+<source media="(max-width: 767px)" sizes="(max-width: 700px) 100vw, 700px" srcset="
+                            img/about-1_zyqn6d_ar_1_1,c_fill,g_auto__c_scale,w_200.webp 200w,
+                            img/about-1_zyqn6d_ar_1_1,c_fill,g_auto__c_scale,w_474.webp 474w,
+                            img/about-1_zyqn6d_ar_1_1,c_fill,g_auto__c_scale,w_675.webp 675w,
+                            img/about-1_zyqn6d_ar_1_1,c_fill,g_auto__c_scale,w_700.webp 700w"/>
+<source media="(min-width: 768px) and (max-width: 991px)" sizes="(max-width: 991px) 70vw, 694px" srcset="
+                            img/about-1_zyqn6d_ar_4_3,c_fill,g_auto__c_scale,w_538.webp 538w,
+                            img/about-1_zyqn6d_ar_4_3,c_fill,g_auto__c_scale,w_694.webp 694w"/>
+<source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 1167px) 60vw, 700px" srcset="
+                            img/about-1_zyqn6d_ar_16_9,c_fill,g_auto__c_scale,w_596.webp 596w,
+                            img/about-1_zyqn6d_ar_16_9,c_fill,g_auto__c_scale,w_700.webp 700w"/>
+<img alt="plumber near me" sizes="(max-width: 1750px) 40vw, 700px" src="img/about-1_zyqn6d_c_scale,w_700.webp" srcset="
+                            img/about-1_zyqn6d_c_scale,w_480.webp 480w,
+                            img/about-1_zyqn6d_c_scale,w_700.webp 700w"/>
+</picture>
+<!-- <img class="position-absolute start-0 bottom-0 img-fluid bg-white pt-2 pe-2 w-50 h-50"
+                        src="img/about-2.jpg" style="object-fit: cover;" alt=""> -->
+<picture>
+<source media="(max-width: 767px)" sizes="(max-width: 400px) 100vw, 400px" srcset="
+                            img/about-2_qwpv9i_ar_1_1,c_fill,g_auto__c_scale,w_200.webp 200w,
+                            img/about-2_qwpv9i_ar_1_1,c_fill,g_auto__c_scale,w_400.webp 400w"/>
+<source media="(min-width: 768px) and (max-width: 991px)" sizes="(max-width: 571px) 70vw, 400px" srcset="
+                            img/about-2_qwpv9i_ar_4_3,c_fill,g_auto__c_scale,w_400.webp 400w"/>
+<source media="(min-width: 992px) and (max-width: 1199px)" sizes="(max-width: 667px) 60vw, 400px" srcset="
+                            img/about-2_qwpv9i_ar_16_9,c_fill,g_auto__c_scale,w_400.webp 400w"/>
+<img alt="plumber near me" sizes="(max-width: 1000px) 40vw, 400px" src="img/about-2_qwpv9i_c_scale,w_400.webp" srcset="
+                            img/about-2_qwpv9i_c_scale,w_400.webp 400w"/>
+</picture>
 </div>
 </div>
 </div>
@@ -199,32 +332,32 @@
 </div>
 <!-- About End -->
 <!-- Fact Start -->
-<div class="container-fluid fact bg-dark my-5 py-5">
-<div class="container">
-<div class="row g-4">
-<div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-<i class="fa fa-check fa-2x text-white mb-3"></i>
-<h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-<p class="text-white mb-0">Years Experience</p>
-</div>
-<div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-<i class="fa fa-users-cog fa-2x text-white mb-3"></i>
-<h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-<p class="text-white mb-0">Expert Technicians</p>
-</div>
-<div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-<i class="fa fa-users fa-2x text-white mb-3"></i>
-<h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-<p class="text-white mb-0">Satisfied Clients</p>
-</div>
-<div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-<i class="fa fa-wrench fa-2x text-white mb-3"></i>
-<h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
-<p class="text-white mb-0">Compleate Projects</p>
-</div>
-</div>
-</div>
-</div>
+<!-- <div class="container-fluid fact bg-dark my-5 py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-check fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Years Experience</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Expert Technicians</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-users fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Satisfied Clients</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <i class="fa fa-wrench fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Compleate Projects</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
 <!-- Fact End -->
 <!-- Content Section Start -->
 <div class="container-fluid my-5 px-0">
@@ -233,121 +366,79 @@
 <div class="row">
 <div class="col-lg-10 mx-auto">
 <article class="bg-light p-4">
-<p id="about_emergency_content"><h1>A Dive into Eagle Pass, TX: Exploring History, Culture, and Local Plumbing Services</h1>
-<p>Nestled on the banks of the Rio Grande, Eagle Pass, TX, is a city rich in history and brimming with cultural diversity. While relatively small in size, it stands as a beacon of Texan charisma and community spirit. Let's journey through the historical tapestry and cultural fabric of Eagle Pass, before delving into an essential local service – plumbing – and the vital role it plays in the area.</p>
-<h2>Historical Roots of Eagle Pass</h2>
-<p>Eagle Pass holds the distinction of being the first U.S. settlement on the Rio Grande, established in the mid-19th century. Its origins can be traced back to <strong>1849</strong>, when Fort Duncan was established to protect settlers from Native American tribes and potential conflicts. This military installation served as a hub of early development, demarcating the region as a critical frontier post in Texas history.</p>
-<p>The city was officially incorporated in <strong>1889</strong>, and its growth was fueled by the arrival of the railroad, which bolstered trade and migration. Over the decades, Eagle Pass has evolved from a military outpost to a vibrant city reflecting the complexities and dynamics of border life.</p>
-<h3>Major Historic Sites</h3>
+<p class="text-dark" id="about_emergency_content"><p class="text-dark">Eagle Pass, Texas, is a city rich in history and culture, nestled along the Rio Grande. Established initially as a crucial trade route and frontier fort, Eagle Pass has grown into a vibrant community that harmoniously blends its historical roots with modern living. With this growth comes a robust demand for plumbing services, essential for maintaining the city's infrastructure and ensuring residents' comfort and safety.</p>
+<h2>Plumbing: The Backbone of Modern Eagle Pass</h2>
+<p class="text-dark">The need for reliable plumbing in Eagle Pass has increased with its expanding population and thriving businesses. Let's explore some essential plumbing services:</p>
+<h3>Residential Plumbing Solutions</h3>
+<p class="text-dark">For homeowners in Eagle Pass, maintaining a seamless plumbing system is crucial for a comfortable living environment. Our residential plumbing services include:</p>
 <ul>
-<li>
-<p><strong>Fort Duncan Museum</strong>: Preserving the legacy of the fort, this museum offers insights into military life in the 19th century and the broader historical context of the area.</p>
-</li>
-<li>
-<p><strong>Plaza de las Culturas</strong>: This public space serves as a homage to the diverse cultures that have shaped Eagle Pass, featuring replicas of Mayan and Aztec monuments.</p>
-</li>
+<li><strong>Leak Detection and Repair</strong>: We use state-of-the-art technology to identify and repair leaks before they escalate.</li>
+<li><strong>Drain Cleaning</strong>: Keeping drains clear prevents blockages and costly repairs.</li>
+<li><strong>Water Heater Installation and Repair</strong>: We ensure your water heater operates efficiently, providing hot water when you need it.</li>
 </ul>
-<h2>Cultural Tapestry</h2>
-<p>Eagle Pass boasts a unique cultural blend, a reflection of its geographical position and historical influences. The city's proximity to Mexico is evident in its food, language, and community events, providing a rich tapestry of experiences for residents and visitors alike.</p>
-<h3>Cultural Highlights</h3>
+<h3>Commercial Plumbing Expertise</h3>
+<p class="text-dark">Businesses in Eagle Pass rely on efficient plumbing systems to ensure smooth operations. Our commercial plumbing services cover:</p>
 <ul>
-<li>
-<p><strong>Annual Texas-Mexico International Borderfest</strong>: Celebrating the shared heritage of Texas and Mexico, this festival is a showcase of music, cuisine, and dance, epitomizing the cross-border camaraderie.</p>
-</li>
-<li>
-<p><strong>Eagle Pass Public Library</strong>: As a cultural hub, the library hosts numerous events highlighting local authors, bilingual storytelling, and art exhibitions.</p>
-</li>
-<li>
-<p><strong>Local Cuisine</strong>: The food scene is a delightful fusion of Tex-Mex and traditional Mexican dishes. Tantalizing offerings such as enchiladas, tacos al pastor, and cabrito are local favorites.</p>
-</li>
+<li><strong>Backflow Prevention</strong>: Protecting potable water supplies from contamination is vital for businesses.</li>
+<li><strong>Sewer Line Services</strong>: We handle everything from sewer line inspections to repairs, using advanced tools to minimize disruptions.</li>
+<li><strong>Fixture Installation and Maintenance</strong>: We offer expert installation and maintenance for all types of plumbing fixtures crucial for business operations.</li>
 </ul>
-<h2>The Importance of Plumbing Services in Eagle Pass</h2>
-<p>In any city, infrastructure services play an integral role in ensuring public health and safety. In Eagle Pass, the need for reliable plumbing services is paramount due to factors such as climate, aging infrastructure, and the ongoing development of residential and commercial properties.</p>
-<h3>Key Plumbing Services</h3>
+<h3>Emergency Plumbing Services</h3>
+<p class="text-dark">The unpredictable nature of plumbing issues necessitates a responsive emergency service:</p>
 <ul>
-<li>
-<p><strong>General Plumbing Repairs</strong>: This includes fixing leaks, clogs, and other common plumbing issues that can disrupt daily life.</p>
-</li>
-<li>
-<p><strong>Installation of Water Heaters</strong>: With seasonal temperature fluctuations, installing and maintaining water heaters is a crucial service for maintaining comfort and efficiency in homes and businesses.</p>
-</li>
-<li>
-<p><strong>Pipe Replacement and Re-Routing</strong>: Aging pipes can lead to leaks and water quality issues. Professional plumbing services ensure that all pipe systems are up-to-date and secure.</p>
-</li>
-<li>
-<p><strong>Sewer Line Repair</strong>: Given the geographical location, sewer systems may be prone to blockages or damage. Expert services address these issues promptly to prevent contamination and ensure community well-being.</p>
-</li>
+<li><strong>24/7 Emergency Response</strong>: Our team is ready to tackle any plumbing emergency at any hour.</li>
+<li><strong>Immediate Leak Repairs</strong>: Swift action to address leaks can prevent extensive damage to properties.</li>
 </ul>
-<h3>Why Hire a Professional Plumber</h3>
-<ul>
-<li>
-<p><strong>Expertise and Experience</strong>: Professional plumbers bring years of experience and knowledge, ensuring that any plumbing issue is handled efficiently and effectively.</p>
-</li>
-<li>
-<p><strong>Compliance with Regulations</strong>: Plumbers ensure that all installations and repairs meet local codes and regulations, protecting homeowners from potential fines and ensuring safety.</p>
-</li>
-<li>
-<p><strong>Emergency Services</strong>: Plumbing emergencies can occur at any time. Local plumbers in Eagle Pass are often available 24/7, providing prompt solutions to urgent problems.</p>
-</li>
-</ul>
-<h2>Choosing the Right Plumbing Service in Eagle Pass</h2>
-<p>Selecting the right plumber is critical for both immediate and long-term needs. Here are some tips to consider when choosing a plumbing service in Eagle Pass:</p>
-<ul>
-<li>
-<p><strong>Check Credentials</strong>: Ensure the plumber is licensed and insured, which protects you and your property.</p>
-</li>
-<li>
-<p><strong>Read Reviews</strong>: Online reviews and testimonials can provide insights into the reliability and quality of service provided by local plumbers.</p>
-</li>
-<li>
-<p><strong>Ask for Estimates</strong>: Obtain detailed estimates from multiple providers to ensure you receive fair pricing for services.</p>
-</li>
-<li>
-<p><strong>Inquire About Warranties</strong>: Good plumbers offer warranties for their work, providing peace of mind in case issues arise after service.</p>
-</li>
-</ul>
-<h3>Notable Local Plumbing Providers</h3>
-<ul>
-<li>
-<p><strong>Local Plumbing Specialists</strong>: Known for their customer-first approach and comprehensive service offerings.</p>
-</li>
-<li>
-<p><strong>Eagle Plumbing Services</strong>: Renowned for quick response times and reliable emergency services.</p>
-</li>
-</ul>
-<p>Eagle Pass, TX, stands as a microcosm of the broader Texan experience, with its rich history, vibrant culture, and essential local services forming the backbone of its community. Understanding the historical and cultural context enhances appreciation for the unique character of the city, while recognizing the importance of essential services like plumbing underscores the practical needs of its residents. Whether exploring the echoes of the past or ensuring the modern comforts of today, Eagle Pass is a city that seamlessly blends the old with the new, ensuring a thriving community for generations to come.</p></p></article>
+<p class="text-dark">Eagle Pass's rich cultural heritage and historical significance illustrate why professional plumbing services are vital. By maintaining modern plumbing systems, we preserve the city's charm while facilitating growth and development. Click on the call button today to connect with our representatives and ensure your plumbing needs are expertly met in Eagle Pass.</p></p></article>
 </div>
 </div>
 </div>
 </div>
 <!-- Content Section End -->
+<div class="container-xxl py-5">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+<h1 class="mb-4" id="contact_section_title">Find Us</h1>
+<iframe allowfullscreen="" aria-hidden="false" class="position-relative w-100" frameborder="0" id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125000!2d-100.31543!3d28.82698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f18!3m3!1m2!1s0x0%3A0x0!2sLocation!5e0!3m2!1sen!2s!4v1234567890" style="height: 300px; border:0;" tabindex="0">
+</iframe>
+</div>
+</div>
+</div>
+</div>
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
 <div class="container py-5">
 <div class="row g-5">
 <div class="col-lg-3 col-md-6">
-<h4 class="text-light mb-4">Address</h4>
-<p class="mb-2" id="about_footer_city">Eagle Pass, TX</p>
-<a class="text-secondary text-decoration-none phoneNumber" href="tel:(773) 337-2939" id="footer_phone">(773) 337-2939</a>
+<h4 class="text-light mb-4">Business</h4>
+<p class="mb-2" id="footer_business_name">Pro Plumber Eagle Pass</p>
+<p class="mb-2" id="businessAddress">2131 Main St, Eagle Pass, TX 78852, USA</p>
+<p class="mb-2"><a class="text-light text-decoration-none phoneNumber" href="tel:(830) 205-0587" id="footer_phone">(830) 205-0587</a></p>
 <p class="mb-2" id="about_footer_email">info@plumbereaglepasstx.com</p>
-<!-- <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="[Twitter]"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="[Facebook]"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="[Youtube]"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="[LinkedIn]"><i class="fab fa-linkedin-in"></i></a>
-                    </div> -->
+<div class="d-flex pt-2">
+<a class="socialFacebook btn btn-outline-light btn-social" href="https://www.facebook.com/Proplumbereaglepass/"><i class="fab fa-facebook-f"></i></a>
+<a class="socialInstagram btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+<a class="socialLinkedin btn btn-outline-light btn-social" href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fab fa-linkedin-in"></i></a>
+<a class="socialPinterest btn btn-outline-light btn-social" href="https://www.pinterest.com/plumbereaglepass/"><i class="fab fa-pinterest"></i></a>
+</div>
 </div>
 <div class="col-lg-3 col-md-6">
 <h4 class="text-light mb-4">Opening Hours</h4>
-<h6 class="text-light">Monday - Friday:</h6>
-<p class="mb-4">09.00 AM - 09.00 PM</p>
-<h6 class="text-light">Saturday - Sunday:</h6>
-<p class="mb-0">09.00 AM - 12.00 PM</p>
+<h6 class="text-light">Monday - Sunday:</h6>
+<p class="mb-4">24 Hours</p>
+<p class="text-light">24x7 Emergency Service</p>
 </div>
-<div class="col-lg-3 col-md-6" id="footer_service_links"><h4 class="text-light mb-4">Services</h4><a class="btn btn-link" href="leak-detection">Leak Detection</a><a class="btn btn-link" href="leak-repair">Leak Repair</a><a class="btn btn-link" href="pipe-repair">Pipe Repair</a><a class="btn btn-link" href="tap-repair">Tap Repair</a><a class="btn btn-link" href="drainage-cleaning">Drainage Cleaning</a></div>
+<div class="col-lg-3 col-md-6" id="footer_service_links">
+<h4 class="text-light mb-4">Links</h4>
+<a class="btn btn-link" href="https://plumbereaglepasstx.com/privacy-policy">Privacy Policy</a>
+<a class="btn btn-link" href="https://plumbereaglepasstx.com/terms-and-conditions">Terms &amp; Conditions</a>
+<a class="btn btn-link" href="https://plumbereaglepasstx.com/certifications">Certifications</a>
+<a class="btn btn-link" href="https://plumbereaglepasstx.com/sitemap.xml">Sitemap</a>
+</div>
 <div class="col-lg-3 col-md-6">
 <h4 class="text-light mb-4">Newsletter</h4>
-<p>Sign up to our Newsletter</p>
+<p class="text-dark">Sign up to our Newsletter</p>
 <div class="position-relative mx-auto" style="max-width: 400px;">
 <input class="form-control border-0 w-100 py-3 ps-4 pe-5" placeholder="Your email" type="text"/>
 <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" type="button">SignUp</button>
@@ -370,16 +461,9 @@
 <a class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top" href="#"><i class="bi bi-arrow-up"></i></a>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/tempusdominus/js/moment.min.js"></script>
-<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Template Javascript -->
-<script src="js/main.js"></script>
+<script defer="" src="js/main.js"></script>
 </body>
 </html>
